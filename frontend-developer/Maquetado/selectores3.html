@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p:hover {
+            color: salmon;
+        }
+        div p:nth-child(2){
+            color: sienna;
+        }
+        p::first-letter{
+            color: yellowgreen;
+        }
+        p::before{
+            content: "👀";
+        }
+        p::after{
+            content: "💋";
+        }
+        ::placeholder{
+            color: tomato;
+        }
+        /*Aplica estilo a enlaces que aún no han 
+        sido visitados*/
+        a:link{
+            color:lightseagreen;
+            font-weight: bold;
+        }
+
+         /*Aplica estilo a enlaces que ya han 
+        sido visitados previamente por el usuario*/
+        a:visited{
+            color: lightslategray;
+            font-weight: 100;
+        }
+    </style>
+</head>
+<body>
+    <p>Holaa</p>
+    <div>
+        <p>Platzi</p>
+        <p>Cursos</p>
+        <p>Lives</p>
+        <a href="https://platzi.com/home">Platzi Home</a>
+    </div>
+</body>
+</html>

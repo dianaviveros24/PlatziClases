@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <title>Document</title>
+    <style>
+        section {
+            width: 100%;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .card {
+            width: 400px;
+            height: 600px;
+            border-radius: 20px;
+            overflow: hidden;
+            /*Esconde todo lo que se salga de las card*/
+            box-shadow: 1px 1px 5px 1px rgb(227, 238, 240);
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card img {
+            width: 90%;
+            display: block;
+            margin-top: 15px;
+            border-radius: 20px;
+        }
+
+        .content-add {
+            width: 50px;
+            height: 50px;
+            border-radius: 25px;
+            position: absolute;
+            top: 190px;
+            left: 320px;
+            background-color: white;
+        }
+        .content-share {
+            width: 50px;
+            height: 50px;
+            border-radius: 25px;
+            position: absolute;
+            top: 40px;
+            left: 340px;
+        }
+        .content-add .item {
+            position: relative;
+            top: 14px;
+            left: 14px;
+        }
+
+        .content-add .item i {
+            display: block;
+        }
+
+        button {
+            background-color: rgb(0, 100, 231);
+            border: 0;
+            width: 90%;
+            height: 60px;
+            color: white;
+            font-weight: bold;
+            border-radius: 10px;
+            box-shadow: 1px 1px 5px 0px rgb(109, 155, 240);
+            font-size: 15px;
+        }
+
+        .details {
+            background-color: rgba(0, 100, 231, 0.082);
+            width: 90%;
+            display: flex;
+            justify-content: space-evenly;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            padding: 20px 0 20px 0;
+        }
+
+        .details p {
+            margin: 0px;
+        }
+
+        .details .price {
+            color: rgb(35, 35, 36);
+            font-weight: bold;
+        }
+
+        .details .detail-description {
+            font-size: 10px;
+            color: grey;
+        }
+
+        .details .detail-change {
+            color: rgb(0, 38, 252);
+            font-weight: 600;
+        }
+
+        .card .cancel {
+            font-size: 15px;
+            color: grey;
+            margin-top: 20px;
+        }
+
+        .card .description {
+            width: 90%;
+            font-size: 15px;
+            color: grey;
+        }
+        .card .card-details{
+            width: 90%;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div class="card">
+            <img src="https://images.pexels.com/photos/9304473/pexels-photo-9304473.jpeg?cs=srgb&dl=pexels-sasha-prasastika-9304473.jpg&fm=jpg"
+                alt="">
+                <div class="content-share">
+                    <a class="item"><i class="fa fa-share-alt" style="font-size:20px"></i></a>
+                </div>
+            <div class="content-add">
+                <a class="item"><i class="fa fa-heart" style="font-size:20px"></i></a>
+            </div>
+            <div class="card-details">
+                <h1>Apartments</h1>
+                <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. molestias quas</p>
+            </div>
+            <div class="details">
+                <div>
+                    <p class="price">$140</p>
+                    <p class="detail-description">Montly payment</p>
+                </div>
+                <p class="detail-change">Change</p>
+            </div>
+            <button class="rent">I Want It!</button>
+            <p class="cancel">Cancel</p>
+
+        </div>
+    </section>
+</body>
+
+</html>

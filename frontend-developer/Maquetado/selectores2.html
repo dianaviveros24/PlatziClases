@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*Descendiente*/
+        div p {
+            color: lime;
+        }
+
+        /*Hijo directo*/
+        div > div {
+            background: peru;
+        }
+        /*Por clase*/
+        .es{
+            background: red;
+        }
+        /*Elementos adyacentes*/
+        div + section {
+            background: royalblue;
+        }
+        /*Hermanos*/
+        div ~ p {
+            color: seagreen;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div>
+            <p>Platzi</p>
+            <div class="es">Es</div>
+        </div>
+    </div>
+    <p>Clase de selectores</p>
+    <section>
+        Mejor
+    </section>
+    <div>
+        Mejor
+        <div>
+            <p>Platzi</p>
+            <div class="es">Es</div>
+        </div>
+    </div>
+    <p>Clase de selectores</p>
+
+</body>
+
+</html>
