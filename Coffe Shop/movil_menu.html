@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        /*1. Definir variables globales*/
+        :root {
+            --white: #FFFF;
+            --black: #0000;
+            --very-light-pink: #C7C7C7;
+            --text-input-field: #F7F7F7;
+            --hospital-green: #ACD982;
+
+            --sm: 14px;
+            --md: 16px;
+            --lg: 18px;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            margin: 0;
+        }
+
+        /*2. Centrar todos los elementos con el contenedor princiapl padre, darle estructura con grid*/
+        .login {
+            width: 100%;
+            height: 100vh;
+            /*LLevar todos los elementos al centro*/
+            display: grid;
+            place-items: center;
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form a {
+            color: var(--hospital-green);
+            font-size: var(--sm);
+            text-align: center;
+            text-decoration: none;
+            margin-bottom: 52px;
+        }
+
+        /*3. Organizar los elementos del contenedor hijo, la estructura con grid
+Definir tamaño*/
+        .form-container {
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            width: 300px;
+        }
+
+        /*4. Definir dimensiones de elementos gráficos*/
+        .logo {
+            width: 150px;
+            margin-bottom: 48px;
+            justify-self: center;
+            display: none;
+        }
+
+        .label {
+            font-size: var(--sm);
+            font-weight: bold;
+            margin-bottom: 4px;
+        }
+
+        .input {
+            background-color: var(--text-input-field);
+            border: none;
+            border-radius: 8px;
+            height: 30px;
+            font-size: var(--md);
+            padding: 6px;
+            margin-bottom: 12px;
+        }
+        .input-email {
+            margin-bottom: 22px;
+        }
+
+        .primary-button {
+            background-color: var(--hospital-green);
+            border-radius: 8px;
+            border: none;
+            color: var(--white);
+            width: 100%;
+            cursor: pointer;
+            font-size: var(--md);
+            font-weight: bold;
+            height: 50px;
+        }
+
+        .secondary-button {
+            border-color: var(--hospital-green);
+            border-radius: 8px;
+            border: 1px solid var(--hospital-green);
+            background-color: var(--white);
+            color: var(--hospital-green);
+            width: 100%;
+            cursor: pointer;
+            font-size: var(--md);
+            font-weight: bold;
+            height: 50px;
+        }
+
+        .login-button {
+            margin-top: 14px;
+            margin-bottom: 30px;
+        }
+
+        @media (max-width: 640px) {
+            .logo {
+                display: initial;
+            }
+            .secondary-button {
+                position: absolute;
+                bottom: 20px;
+                width: inherit;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login">
+        <div class="form-container">
+            <img src="./logos/logo_yard_sale.svg" alt="logo" class="logo">
+
+            <form class="form" action="/">
+                <label for="email_adress" class="label">Email adress</label>
+                <input type="email" id="email_adress" class="input input-email" placeholder="email@mail.co">
+
+                <label for="password" class="label">Password</label>
+                <input type="password" id="password" class="input input-password" placeholder="**************">
+
+                <input type="submit" value="Log in" class="primary-button login-button">
+                <a href="/">Forgot my password</a>
+            </form>
+            <input type="submit" value="Sing up" class="secondary-button sign-button">
+        </div>
+    </div>
+</body>
+
+</html>

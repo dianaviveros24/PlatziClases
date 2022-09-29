@@ -1,0 +1,111 @@
+:root{
+    --primary-orange: hsl(25, 97%, 53%);
+
+    --white: hsl(0, 0%, 100%);
+    --light-grey: hsl(217, 12%, 63%);
+    --medium-grey: hsl(216, 12%, 54%);
+    --dark-blue: hsl(213, 20%, 18%);
+    --very-dark-blue: hsl(216, 12%, 8%);
+
+    --sm: 15px;
+    --md: 17px;
+}
+
+body{
+    font-weight: 400;
+    font-family: 'Overpass', sans-serif;
+    margin: 0;
+    background-color: var(--very-dark-blue);
+}
+section{
+    height: 100vh;
+    /*LLevar todos los elementos al centro*/
+    display: grid;
+    place-items: center;
+}
+.container{
+    padding: 25px;
+    height: 50vh;
+    display: grid;
+    grid-template-rows: auto auto auto;
+    width: 300px;
+    border-radius: 25px;
+    align-content: center;
+    background: linear-gradient(0deg, rgb(22, 24, 28) 0%, rgba(37,45,55,1) 100%);
+}
+.container .response{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.container .response .card-description{
+    text-align: center;
+}
+.container .response #response{
+    background-color: var(--dark-blue);
+    color: var(--primary-orange);
+    font-size: var(--sm);
+    padding: 8px 15px;
+    border-radius: 20px;
+    margin-top: 10px;
+}
+
+figure{
+    margin: 60px 0px 0px;
+    padding: 10px;
+    border-radius: 20px;
+    justify-self: start;
+    background-color: var(--dark-blue);
+}
+.message{
+    font-size: var(--md);
+    color: var(--white);
+}
+.card-description{
+    font-weight: 400;
+    font-size: var(--sm);
+    color: var(--light-grey);
+}
+.rating-options{
+    display: flex;
+    place-items: center;
+    align-content: center;
+    justify-content: space-between;
+}
+.rating-options input{
+    font-size: var(--sm);
+    border: none;
+    border-radius: 50px;
+    width: 50px;
+    padding: 20px;
+    color: var(--light-grey);
+    background-color: var(--dark-blue);
+    cursor: pointer;
+}
+.submit-button button{
+    margin-top: 50px;
+    justify-self: center;
+    border-radius: 25px;
+    border: none;
+    color: var(--white);
+    width: 100%;
+    cursor:pointer;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    height: 40px;
+    background-color: var(--primary-orange);
+}
+
+.rating-options input:hover{
+    background-color: var(--light-grey);
+    color: white;
+}
+.rating-options input:focus{
+    background-color: var(--primary-orange);
+    color: white;
+}
+.submit-button button:hover{
+    background-color: var(--white);
+    color: var(--primary-orange);
+}

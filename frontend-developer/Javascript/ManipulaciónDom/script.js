@@ -24,7 +24,6 @@ console.log({
 //Permite ingresar código html malisioso por parte de los usuarios
     //h1.innerHTML = 'Cambio de texto <br> desde JS';
 //Esta pasa todo a texto incluso lo que es HTML
-h1.innerText = 'Cambio de texto <br> desde JS';
 
 //Leer atributos de nuestro elemento
 console.log(h1.getAttribute('pantalla'));
@@ -44,7 +43,7 @@ h1.classList.contains('azul');
 
 
 //Asignar un valor por defecto desde JS, pero el usuario aún lo puede modificar
-input.value = "42359"
+input.value = "42359";
 
 //Crear elemento HTML desde JS
 console.log(document.createElement('img'));
