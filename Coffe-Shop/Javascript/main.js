@@ -16,21 +16,21 @@ menuCarritoIcon.addEventListener('click', toggleCarritoAside);
 
 function toggleDesktopMenu() {
     const isAsideOpen = !aside.classList.contains('inactive');
-    
-    if (isAsideOpen){
+
+    if (isAsideOpen) {
         aside.classList.add('inactive');
-    } 
-    
+    }
+
     desktopMenu.classList.toggle('inactive');
 }
 
 function toggleMobileMenu() {
     const isAsideOpen = !aside.classList.contains('inactive');
-    
-    if (isAsideOpen){
+
+    if (isAsideOpen) {
         aside.classList.add('inactive');
     }
-    
+
     mobileMenu.classList.toggle('inactive');
 }
 
@@ -38,13 +38,13 @@ function toggleCarritoAside() {
     const isMobilepMenuOpen = !mobileMenu.classList.contains('inactive');
     const isDesktopMenuOpen = !desktopMenu.classList.contains('inactive');
 
-    if (isMobilepMenuOpen){
+    if (isMobilepMenuOpen) {
         // Si el mobileMenu esta abierto y selecciona el aside, se pone la clase inactive para que se cierre
         mobileMenu.classList.add('inactive');
-    } else if (isDesktopMenuOpen){
+    } else if (isDesktopMenuOpen) {
         desktopMenu.classList.add('inactive');
     }
-    
+
     aside.classList.toggle('inactive');
 }
 
@@ -77,40 +77,47 @@ productList.push({
             </div>
              */}
 
-for (product of productList) {
-    //Crear cadda elemento HTML con JS
-    const productCard =  document.createElement('div');
-    //Añadirle la calse a la productCard
-    productCard.classList.add('product-card');
-    
-    const productImg = document.createElement('img');
-    /* Al img se le asigna un src no una class, así que se accede a ese atributo llegando el valor que esté por cada objeto
-    product ={name, price, image} -> product.image */
-    productImg.setAttribute('src', product.image);
-    
-    const productInfo =  document.createElement('div');
-    productInfo.classList.add('product-info');
+//Crear una función que recibe como parametro un arreglo y que me permite automatizar 
+function renderProducts(arr) {
+    //Crea un producto por cada elemento dentro de arr
+    for (product of arr) {
+        //Crear cadda elemento HTML con JS
+        const productCard = document.createElement('div');
+        //Añadirle la calse a la productCard
+        productCard.classList.add('product-card');
 
-    
-    const productInfoDiv =  document.createElement('div');
-    
-    const productPrice =  document.createElement('p');
-    productPrice.innerText = '$' + product.price;
-    const productName =  document.createElement('p');
-    productName.innerText = product.name;
-    productInfoDiv.append(productPrice, productName);
-    
-    
-    const productInfoFigure =  document.createElement('figure');
-    const productImgCar =  document.createElement('img');
-    productImgCar.setAttribute('src', './icons/bt_add_to_cart.svg');
-    
-    //Asignar componentes hijos a los componentes padres
-    productInfoFigure.appendChild(productImgCar);
-    
-    productInfo.append(productInfoDiv, productInfoFigure);
-    
-    productCard.append(productImg, productInfo);
-    
-    cardsContainer.appendChild(productCard);
+        const productImg = document.createElement('img');
+        /* Al img se le asigna un src no una class, así que se accede a ese atributo llegando el valor que esté por cada objeto
+        product ={name, price, image} -> product.image */
+        productImg.setAttribute('src', product.image);
+
+        const productInfo = document.createElement('div');
+        productInfo.classList.add('product-info');
+
+
+        const productInfoDiv = document.createElement('div');
+
+        const productPrice = document.createElement('p');
+        productPrice.innerText = '$' + product.price;
+        const productName = document.createElement('p');
+        productName.innerText = product.name;
+        productInfoDiv.append(productPrice, productName);
+
+
+        const productInfoFigure = document.createElement('figure');
+        const productImgCar = document.createElement('img');
+        productImgCar.setAttribute('src', './icons/bt_add_to_cart.svg');
+
+        //Asignar componentes hijos a los componentes padres
+        productInfoFigure.appendChild(productImgCar);
+
+        productInfo.append(productInfoDiv, productInfoFigure);
+
+        productCard.append(productImg, productInfo);
+
+        cardsContainer.appendChild(productCard);
+    }
 }
+
+//Se le pasa la lista que va a recorrer puede ser la creada u otra
+renderProducts(productList);
