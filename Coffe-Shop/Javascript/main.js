@@ -4,7 +4,7 @@ const menuCarritoIcon = document.querySelector('.navbar-shopping-car');
 
 const mobileMenu = document.querySelector('.mobile-menu');
 const desktopMenu = document.querySelector('.desktop-menu');
-const aside = document.querySelector('.product-detail');
+const shoppingCarContainer = document.querySelector('#shoppingCarContainer');
 
 const cardsContainer = document.querySelector('.cards-container')
 
@@ -15,20 +15,20 @@ menuCarritoIcon.addEventListener('click', toggleCarritoAside);
 
 
 function toggleDesktopMenu() {
-    const isAsideOpen = !aside.classList.contains('inactive');
+    const isAsideOpen = !shoppingCarContainer.classList.contains('inactive');
 
     if (isAsideOpen) {
-        aside.classList.add('inactive');
+        shoppingCarContainer.classList.add('inactive');
     }
 
     desktopMenu.classList.toggle('inactive');
 }
 
 function toggleMobileMenu() {
-    const isAsideOpen = !aside.classList.contains('inactive');
+    const isAsideOpen = !shoppingCarContainer.classList.contains('inactive');
 
     if (isAsideOpen) {
-        aside.classList.add('inactive');
+        shoppingCarContainer.classList.add('inactive');
     }
 
     mobileMenu.classList.toggle('inactive');
@@ -45,7 +45,7 @@ function toggleCarritoAside() {
         desktopMenu.classList.add('inactive');
     }
 
-    aside.classList.toggle('inactive');
+    shoppingCarContainer.classList.toggle('inactive');
 }
 
 //Lista de productos que se ofrecen
@@ -79,7 +79,7 @@ productList.push({
 
 //Crear una función que recibe como parametro un arreglo y que me permite automatizar 
 function renderProducts(arr) {
-    //Crea un producto por cada elemento dentro de arr
+    //Crea un producto por cada elemento dentro de arr, con for of accede a cada elemento y con for in accede al indice
     for (product of arr) {
         //Crear cadda elemento HTML con JS
         const productCard = document.createElement('div');
@@ -108,7 +108,7 @@ function renderProducts(arr) {
         const productImgCar = document.createElement('img');
         productImgCar.setAttribute('src', './icons/bt_add_to_cart.svg');
 
-        //Asignar componentes hijos a los componentes padres
+        //Asociar componentes hijos a los componentes padres
         productInfoFigure.appendChild(productImgCar);
 
         productInfo.append(productInfoDiv, productInfoFigure);
